@@ -12,11 +12,32 @@ This repository contains ROS 2 workspace code that should be cloned and tested i
 
 ## Target Environment
 
-- Ubuntu 24.04 LTS
-- ROS 2 Jazzy
-- Python
-- `rclpy`
-- `colcon`
+- Ubuntu 24.04 LTS for ROS 2 builds and runtime tests
+- ROS 2 Jazzy inside Ubuntu
+- Python beginner nodes with `rclpy`
+- `colcon` inside Ubuntu
+
+## macOS and Ubuntu Workflow
+
+The normal workflow is:
+
+1. Vibe code, edit files, and use Git on macOS.
+2. Do not install ROS 2, `colcon`, `rclpy`, or ROS dependencies on macOS.
+3. Do not run ROS commands on macOS.
+4. Build and test ROS 2 code inside Ubuntu only.
+
+Run these commands in Ubuntu, not macOS:
+
+```bash
+colcon build
+source install/setup.bash
+ros2 pkg list
+ros2 run <package_name> <node_name>
+ros2 topic list
+ros2 node list
+```
+
+If working from macOS and ROS validation is needed, explain the Ubuntu commands to run instead of attempting to install or run ROS locally.
 
 ## Teaching Standard
 
