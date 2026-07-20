@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'rover_heartbeat_minimal = rover_core.rover_heartbeat_minimal:main',
         ],
     },
 )
