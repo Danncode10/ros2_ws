@@ -19,6 +19,11 @@ This repository contains ROS 2 workspace code that should be cloned and tested i
 
 ## macOS and Ubuntu Workflow
 
+The developer setup is split across two machines/environments:
+
+- Codex or Claude runs on macOS.
+- ROS 2 development builds and runtime checks happen in an Ubuntu VM running in UTM on the same Mac.
+
 The normal workflow is:
 
 1. Vibe code, edit files, and use Git on macOS.
@@ -26,7 +31,18 @@ The normal workflow is:
 3. Do not run ROS commands on macOS.
 4. Build and test ROS 2 code inside Ubuntu only.
 
-Run these commands in Ubuntu, not macOS:
+When a task requires Ubuntu, ROS 2, or Linux-specific behavior, do not run that command on macOS. Tell the user that it must be run inside the Ubuntu UTM VM, then provide the exact Ubuntu command.
+
+Ubuntu-only tasks include:
+
+- ROS 2 CLI commands
+- `colcon` builds or tests
+- sourcing ROS 2 setup files
+- installing ROS 2 packages with `apt`
+- Linux system package checks
+- commands that depend on Ubuntu paths, services, or shell environment
+
+Run these commands in Ubuntu UTM, not macOS:
 
 ```bash
 colcon build
@@ -37,7 +53,7 @@ ros2 topic list
 ros2 node list
 ```
 
-If working from macOS and ROS validation is needed, explain the Ubuntu commands to run instead of attempting to install or run ROS locally.
+If working from macOS and ROS validation is needed, explain the Ubuntu UTM commands to run instead of attempting to install or run ROS locally. It is acceptable to edit files and run macOS-safe checks from the shared folder on macOS, but any ROS, Ubuntu, or Linux-specific verification must be deferred to Ubuntu.
 
 ## Teaching Standard
 
