@@ -26,6 +26,7 @@ setup(
         'console_scripts': [
             'rover_heartbeat_minimal = rover_core.rover_heartbeat_minimal:main',
             'rover_status_beacon = rover_core.rover_status_beacon:main',
+            'imu_sensor_sim = rover_core.imu_sensor_sim:main',
         ],
     },
 )
