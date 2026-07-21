@@ -28,6 +28,7 @@ setup(
             'rover_status_beacon = rover_core.rover_status_beacon:main',
             'imu_sensor_sim = rover_core.imu_sensor_sim:main',
             'tilt_monitor = rover_core.tilt_monitor:main',
+            'motor_safety_monitor = rover_core.motor_safety_monitor:main',
         ],
     },
 )
