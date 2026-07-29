@@ -29,6 +29,7 @@ setup(
             'imu_sensor_sim = rover_core.imu_sensor_sim:main',
             'tilt_monitor = rover_core.tilt_monitor:main',
             'motor_safety_monitor = rover_core.motor_safety_monitor:main',
+            'diagnostics_server = rover_core.diagnostics_server:main',
         ],
     },
 )
